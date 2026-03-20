@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+}
+
+header {
+    height: 4rem;
+    background-color: #3f51b5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-texto {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.lista {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.lista li {
+    cursor: pointer;
+}
+
+main {
+    padding: 2rem;
+}
+
+main h1 {
+    margin-bottom: 1.5rem;
+}
+
+.servicos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card-servico {
+    width: 260px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.servico-nome {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.servico-descricao {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.servico-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.btn-selecionar {
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #3f51b5;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-selecionar:hover {
+    background-color: #32408f;
+}
+
+footer {
+    margin-top: 3rem;
+    background-color: #222;
+    color: white;
+    padding: 1.5rem 2rem;
+}
+
+.footer-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
