@@ -2,46 +2,102 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agendamento - Salão</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-  <h1>Agendamento de Serviços</h1>
+<header class="header">
+  <div class="header-content">
+    <h1>Sistema de Agendamento</h1>
+    <p>Gerencie clientes, serviços e horários de forma simples</p>
+  </div>
+</header>
 
-  <h2>Serviços</h2>
-  <div id="lista-servicos"></div>
+<main class="container">
 
-  <h2>Serviços selecionados</h2>
-  <ul id="servicos-selecionados"></ul>
+  <!-- SERVIÇOS -->
+  <section class="card-section">
+    <h2>Serviços disponíveis</h2>
+    <div id="lista-servicos" class="grid"></div>
+  </section>
 
-  <h3>Total: R$ <span id="total">0.00</span></h3>
-  <h3>Duração Total: <span id="duracao">0</span> min</h3>
-  <h3>Quantidade de Serviços: <span id="quantidade">0</span></h3>
+  <!-- RESUMO -->
+  <section class="card-section destaque">
+    <h2>Resumo do agendamento</h2>
+    <div class="resumo-grid">
+      <div class="resumo-box">
+        <span>Total</span>
+        <strong>R$ <span id="total">0.00</span></strong>
+      </div>
+      <div class="resumo-box">
+        <span>Duração</span>
+        <strong><span id="duracao">0</span> min</strong>
+      </div>
+      <div class="resumo-box">
+        <span>Serviços</span>
+        <strong><span id="quantidade">0</span></strong>
+      </div>
+    </div>
 
-  <hr>
+    <ul id="servicos-selecionados" class="lista"></ul>
+  </section>
 
-  <h2>Dados do agendamento</h2>
+  <!-- FORMULÁRIO -->
+  <section class="card-section">
+    <h2>Novo agendamento</h2>
 
-  <label for="cliente">Nome do cliente:</label><br>
-  <input type="text" id="cliente" placeholder="Digite o nome do cliente"><br><br>
+    <div class="form">
+      <input type="text" id="cliente" placeholder="Nome do cliente">
+      <input type="date" id="data">
+      <input type="time" id="horario">
+      <input type="text" id="observacao" placeholder="Observação (opcional)">
+    </div>
 
-  <label for="data">Data:</label><br>
-  <input type="date" id="data"><br><br>
+    <div class="acoes">
+      <button onclick="verificarDisponibilidade()">Verificar horário</button>
+      <button class="primary" onclick="confirmarAgendamento()">Confirmar</button>
+    </div>
 
-  <label for="horario">Horário:</label><br>
-  <input type="time" id="horario"><br><br>
+    <p id="mensagem" class="mensagem"></p>
+  </section>
 
-  <button onclick="verificarDisponibilidade()">Verificar disponibilidade</button>
-  <button onclick="confirmarAgendamento()">Confirmar agendamento</button>
+  <!-- AGENDAMENTOS -->
+  <section class="card-section">
+    <h2>Agendamentos</h2>
+    <ul id="lista-agendamentos" class="lista"></ul>
+  </section>
 
-  <p id="mensagem"></p>
+  <!-- HISTÓRICO -->
+  <section class="card-section">
+    <h2>Histórico</h2>
 
-  <hr>
+    <div class="form">
+      <input type="date" id="data-inicio">
+      <input type="date" id="data-fim">
+      <button onclick="buscarHistorico()">Buscar</button>
+    </div>
 
-  <h2>Agendamentos realizados</h2>
-  <ul id="lista-agendamentos"></ul>
+    <ul id="lista-historico" class="lista"></ul>
+  </section>
 
-  <script src="/static/script.js"></script>
+  <!-- DETALHES -->
+  <section class="card-section">
+    <h2>Detalhes</h2>
+    <div id="detalhes-agendamento" class="detalhes-vazio">
+      Clique em um agendamento para ver detalhes
+    </div>
+  </section>
+
+  <!-- GERENCIAL -->
+  <section class="card-section destaque">
+    <h2>Resumo semanal</h2>
+    <div id="resumo-gerencial"></div>
+  </section>
+
+</main>
+
+<script src="/static/script.js"></script>
 </body>
 </html>

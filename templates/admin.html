@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Painel Administrativo</h1>
+  <p>Gerenciamento de agendamentos</p>
+</header>
+
+<main class="container">
+
+  <section class="card-section">
+    <h2>Agendamentos</h2>
+    <ul id="lista-agendamentos"></ul>
+  </section>
+
+  <section class="card-section">
+    <h2>Editar agendamento</h2>
+
+    <input type="text" id="edit-cliente" placeholder="Cliente">
+    <input type="date" id="edit-data">
+    <input type="time" id="edit-horario">
+
+    <button onclick="salvarEdicao()">Salvar alteração</button>
+  </section>
+
+  <section class="card-section">
+    <h2>Histórico</h2>
+
+    <input type="date" id="data-inicio">
+    <input type="date" id="data-fim">
+
+    <button onclick="buscarHistorico()">Buscar</button>
+
+    <ul id="lista-historico"></ul>
+  </section>
+
+  <section class="card-section">
+    <h2>Resumo semanal</h2>
+    <div id="resumo-gerencial"></div>
+  </section>
+
+</main>
+
+<script src="/static/admin.js"></script>
+</body>
+</html>

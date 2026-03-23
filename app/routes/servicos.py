@@ -1,13 +1,20 @@
 from fastapi import APIRouter
+from app.database import conectar
 
 router = APIRouter()
 
-servicos = [
-    {"id": 1, "nome": "Corte", "descricao": "Corte feminino", "preco": 50, "duracao": 30},
-    {"id": 2, "nome": "Escova", "descricao": "Escova modeladora", "preco": 40, "duracao": 25},
-    {"id": 3, "nome": "Manicure", "descricao": "Unhas completas", "preco": 30, "duracao": 20},
-]
 
 @router.get("/")
 def listar_servicos():
+    conn = conectar()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT id, nome, descricao, preco, duracao
+        FROM servicos
+        ORDER BY nome
+    """)
+    servicos = [dict(row) for row in cursor.fetchall()]
+
+    conn.close()
     return servicos
