@@ -6,4 +6,5 @@ class Agendamento(BaseModel):
     servicos: list[int]
     total: float
     duracao: int
+    data: str
     horario: str

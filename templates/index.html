@@ -2,36 +2,46 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Salão</title>
+  <title>Agendamento - Salão</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-  <h1>Serviços</h1>
+  <h1>Agendamento de Serviços</h1>
+
+  <h2>Serviços</h2>
   <div id="lista-servicos"></div>
 
-  <h2>Selecionados</h2>
+  <h2>Serviços selecionados</h2>
   <ul id="servicos-selecionados"></ul>
 
   <h3>Total: R$ <span id="total">0.00</span></h3>
-
-  <hr>
-
-  <h2>Agendamento</h2>
-
-  <input type="text" id="cliente" placeholder="Nome do cliente">
-  <br><br>
-
-  <button onclick="confirmarAgendamento()">Confirmar Agendamento</button>
-
-  <p id="mensagem"></p>
-  <hr>
-
-  <h2>Agendamentos</h2>
-  <ul id="lista-agendamentos"></ul>
   <h3>Duração Total: <span id="duracao">0</span> min</h3>
   <h3>Quantidade de Serviços: <span id="quantidade">0</span></h3>
-  
+
+  <hr>
+
+  <h2>Dados do agendamento</h2>
+
+  <label for="cliente">Nome do cliente:</label><br>
+  <input type="text" id="cliente" placeholder="Digite o nome do cliente"><br><br>
+
+  <label for="data">Data:</label><br>
+  <input type="date" id="data"><br><br>
+
+  <label for="horario">Horário:</label><br>
+  <input type="time" id="horario"><br><br>
+
+  <button onclick="verificarDisponibilidade()">Verificar disponibilidade</button>
+  <button onclick="confirmarAgendamento()">Confirmar agendamento</button>
+
+  <p id="mensagem"></p>
+
+  <hr>
+
+  <h2>Agendamentos realizados</h2>
+  <ul id="lista-agendamentos"></ul>
+
   <script src="/static/script.js"></script>
 </body>
 </html>
