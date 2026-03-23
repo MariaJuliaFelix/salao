@@ -1,7 +1,10 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/clientes", tags=["Clientes"])
+router = APIRouter()
 
-@router.get("/")
-def listar_clientes():
-    return {"msg": "listar clientes"}
+clientes = []
+
+@router.post("/clientes")
+def criar_cliente(cliente: dict):
+    clientes.append(cliente)
+    return cliente

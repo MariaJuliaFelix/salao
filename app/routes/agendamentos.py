@@ -1,9 +1,10 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/agendamentos", tags=["Agendamentos"])
+router = APIRouter()
 
-@router.get("/")
-def listar_agendamentos():
-    return {"msg": "listar agendamentos"}
+agendamentos = []
 
-
+@router.post("/agendamentos")
+def criar_agendamento(agendamento: dict):
+    agendamentos.append(agendamento)
+    return agendamento
