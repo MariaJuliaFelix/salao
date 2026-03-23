@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
-    <title>Salão da Leila</title>
+  <meta charset="UTF-8">
+  <title>Salão</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <header>
-        <p class="logo-texto">Salão da Leila</p>
 
-        <ul class="lista">
-            <li>Serviços</li>
-            <li>Agendamento</li>
-        </ul>
-    </header>
+  <h1>Serviços</h1>
+  <div id="lista-servicos"></div>
 
-    <main>
-        <section>
-            <h1>Nossos serviços</h1>
-            <div class="servicos" id="lista-servicos"></div>
-        </section>
-    </main>
+  <h2>Selecionados</h2>
+  <ul id="servicos-selecionados"></ul>
 
-    <footer>
-        <ul class="footer-lista">
-            <li>Salão da Leila</li>
-            <li>Cabeleireira Leila</li>
-            <li>Rua Tananan, Bairro Tananan, Número Tananan</li>
-        </ul>
-    </footer>
+  <h3>Total: R$ <span id="total">0.00</span></h3>
 
-    <script src="/static/script.js"></script>
+  <hr>
+
+  <h2>Agendamento</h2>
+
+  <input type="text" id="cliente" placeholder="Nome do cliente">
+  <br><br>
+
+  <button onclick="confirmarAgendamento()">Confirmar Agendamento</button>
+
+  <p id="mensagem"></p>
+  <hr>
+
+  <h2>Agendamentos</h2>
+  <ul id="lista-agendamentos"></ul>
+  <h3>Duração Total: <span id="duracao">0</span> min</h3>
+  <h3>Quantidade de Serviços: <span id="quantidade">0</span></h3>
+  
+  <script src="/static/script.js"></script>
 </body>
 </html>
